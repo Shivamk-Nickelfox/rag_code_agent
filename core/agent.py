@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 import os 
 load_dotenv()
 groq_api_key = os.getenv('GROQ_API_KEY')
+print(f"Using Groq API Key: {groq_api_key}")
 # from openai import OpenAI
 from groq import Groq
 
