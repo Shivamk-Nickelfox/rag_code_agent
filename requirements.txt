@@ -1,0 +1,21 @@
+# RAG Core
+langchain>=0.1.0
+openai>=1.0.0
+chromadb>=0.4.0
+faiss-cpu>=1.7.4
+
+# GitHub Access
+PyGithub>=1.59.0
+gitpython>=3.1.40
+python-dotenv>=1.0.0
+
+# Streamlit UI
+streamlit>=1.30.0
+
+# Embeddings
+tiktoken>=0.5.1
+sentence-transformers>=2.2.2
+
+# Utils
+pydantic>=1.10.12
+PyYAML>=6.0.1

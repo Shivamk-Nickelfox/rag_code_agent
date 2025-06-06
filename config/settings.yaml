@@ -1,0 +1,31 @@
+# settings.yaml
+
+github_repo:
+  type: remote # or 'remote'
+  repo_url_env: GITHUB_TOKEN_URL # path to your local project or GitHub clone directory
+
+vector_store:
+  type: faiss
+  persist_directory: ./data/vector_db
+
+embedding:
+  model: sentence-transformers/all-MiniLM-L6-v2
+
+llm:
+  provider: groq
+  model: llama-3.3-70b-versatile
+  temperature: 0.3
+  max_tokens: 2048
+
+agent:
+  system_prompt: |
+    You are a smart AI code assistant. When given a prompt like "create MVC for header",
+    retrieve all relevant code chunks from the repository and return a complete and clear answer.
+
+ignore_paths:
+  - node_modules
+  - .git
+  - __pycache__
+  - env
+  - venv
+  - .env

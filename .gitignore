@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+env/
+venv/
+.env
+
+# FAISS Vector DB & Cloned Repos
+data/
+
+# IDEs
+.vscode/
+
+# System
+.DS_Store
