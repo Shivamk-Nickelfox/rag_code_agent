@@ -2,7 +2,7 @@
 
 github_repo:
   type: remote # or 'remote'
-  repo_url_env: GITHUB_TOKEN_URL # path to your local project or GitHub clone directory
+  repo_url_env: null # path to your local project or GitHub clone directory
 
 vector_store:
   type: faiss
@@ -25,7 +25,7 @@ agent:
 ignore_paths:
   - node_modules
   - .git
-  - __pycache__
+  - __pycache__ 
   - env
   - venv
   - .env

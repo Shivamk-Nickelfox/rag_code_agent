@@ -9,7 +9,7 @@ venv/
 
 # FAISS Vector DB & Cloned Repos
 data/raw_repo/
-
+data/repos/
 # IDEs
 .vscode/
 

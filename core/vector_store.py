@@ -1,8 +1,7 @@
-# core/vector_store.py
-
 import os
 import faiss
 import pickle
+import numpy as np
 from sentence_transformers import SentenceTransformer
 from core.parser import parse_repo
 from core.utillls import load_config
@@ -21,15 +20,23 @@ class VectorStore:
 
     def embed_texts(self, texts):
         """Embed a list of texts into vectors."""
-        return self.model.encode(texts, convert_to_numpy=True, show_progress_bar=True)
+        embeddings = self.model.encode(texts, convert_to_numpy=True, show_progress_bar=True)
+        # Ensure embeddings is always 2D
+        if embeddings.ndim == 1:
+            embeddings = np.expand_dims(embeddings, axis=0)
+        return embeddings
 
     def build_index(self, docs):
         """Build FAISS index from docs (list of dict with 'content')."""
         texts = [doc['content'] for doc in docs]
         embeddings = self.embed_texts(texts)
-        dim = embeddings.shape[1]
+        
+        print(f"Embeddings shape: {embeddings.shape}")  # Debug line
 
-        # Create a FAISS index
+        if embeddings.shape[0] == 0:
+            raise ValueError("No embeddings were created. Check document contents.")
+
+        dim = embeddings.shape[1]
         self.index = faiss.IndexFlatL2(dim)
         self.index.add(embeddings)
 
@@ -78,8 +85,12 @@ def build_vector_store(repo_path=None):
 
     # Parse repo to get list of documents
     docs = parse_repo(repo_path)
+
     # Filter out any docs that are empty or ignored
     docs = [doc for doc in docs if doc['content'].strip() != '']
+
+    if not docs:
+        raise ValueError("No valid documents found to index. Ensure the repo is not empty or ignored.")
 
     vector_store_instance.build_index(docs)
 

@@ -28,7 +28,7 @@ class CodeAgent:
 
     def run(self, query: str) -> str:
         chunks = vector_store_instance.search(query)
-        prompt = self.build_prompt(query, chunks)
+        prompt = self.build_prompt(query, chunks) 
 
         response = self.client.chat.completions.create(
             model=self.model,
