@@ -3,7 +3,7 @@
 from core.vector_store import load_vector_store, embed_query
 
 
-def get_relevant_chunks(query: str, k: int = 5):
+def get_relevant_chunks(query: str, k: int = 3):
     vector_db = load_vector_store()
     query_vector = embed_query(query)
 
@@ -18,10 +18,10 @@ def get_relevant_chunks(query: str, k: int = 5):
     return documents
 
 
-# Example usage
-if __name__ == '__main__':
-    results = get_relevant_chunks("Create MVC for header")
-    for r in results:
-        print("\n---\n")
-        print(r['file_path'])
-        print(r['content'][:300])
+# # Example usage
+# if __name__ == '__main__':
+#     results = get_relevant_chunks("Create MVC for header")
+#     for r in results:
+#         print("\n---\n")
+#         print(r['file_path'])
+#         print(r['content'][:300])

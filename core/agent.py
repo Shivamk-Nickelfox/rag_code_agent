@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 import os 
 load_dotenv()
 groq_api_key = os.getenv('GROQ_API_KEY')
-print(f"Using Groq API Key: {groq_api_key}")
+
 # from openai import OpenAI
 from groq import Groq
 
@@ -41,10 +41,10 @@ class CodeAgent:
         )
         return response.choices[0].message.content.strip()
 
-# Example usage:
-if __name__ == "__main__":
-    agent = CodeAgent()
-    query = "Create an MVC structure for Header"
-    answer = agent.run(query)
-    print("\n=== AI Agent Response ===\n")
-    print(answer)
+# # Example usage:
+# if __name__ == "__main__":
+#     agent = CodeAgent()
+#     query = "Create an MVC structure for Header"
+#     answer = agent.run(query)
+#     print("\n=== AI Agent Response ===\n")
+#     print(answer)

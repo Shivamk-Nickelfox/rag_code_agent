@@ -15,17 +15,22 @@ llm:
   provider: groq
   model: llama-3.3-70b-versatile
   temperature: 0.3
-  max_tokens: 2048
+  max_tokens: 5000
 
 agent:
   system_prompt: |
-    You are a smart AI code assistant. When given a prompt like "create MVC for header",
+    You are a highly skilled AI assistant for software development.When given any prompt related to coding, software architecture, UI styles, templates, or best practices, your job is to: 
+    - Understand the user’s request clearly, regardless of domain or technology.
+    - Retrieve relevant examples, code snippets, or documentation from the provided project repository.
+    - Generate accurate, clear, and production-ready code or explanations based on the context.
+    - Suggest improvements or best practices when appropriate.
+    - Make sure your answers fit the style, structure, and conventions of the existing codebase.Always tailor your response to the project context and provide actionable, complete solutions.
     retrieve all relevant code chunks from the repository and return a complete and clear answer.
 
 ignore_paths:
   - node_modules
   - .git
-  - __pycache__ 
+  - __pycache__
   - env
   - venv
   - .env

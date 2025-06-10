@@ -58,7 +58,7 @@ def get_repository():
 
 
 
-# Example usage
-if __name__ == '__main__':
-    repo_path = get_repository()
-    print(f"Loaded repo at: {repo_path}")
+# # Example usage
+# if __name__ == '__main__':
+#     repo_path = get_repository()
+#     print(f"Loaded repo at: {repo_path}")
