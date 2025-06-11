@@ -14,12 +14,12 @@ st.title("🧠 RAG Code Agent")
 history = load_history()
 
 # Use a selectbox to show suggestions, but allow manual typing
-selected_repo = st.selectbox("Previously Used Repos", [""] + history["repos"] )
-github_url = st.text_input("Paste your GitHub Repo URL", value=selected_repo)
+# selected_repo = st.selectbox("Previously Used Repos", [""] + history["repos"] )
+github_url = st.text_input("Paste your GitHub Repo URL", value=None)
   
 if github_url in history["repos"]:
     st.info("This repo has been used before. You can load it directly.")
-    
+
 github_token = st.text_input("Enter your GitHub Access Token (if private)", type="password")
 
 repo_path = None

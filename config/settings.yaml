@@ -13,7 +13,7 @@ embedding:
 
 llm:
   provider: groq
-  model: llama-3.3-70b-versatile
+  model: llama-3.3-70b-versatile  
   temperature: 0.3
   max_tokens: 5000
 
