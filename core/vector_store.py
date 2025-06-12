@@ -62,7 +62,7 @@ class VectorStore:
             self.docstore = pickle.load(f)
         print(f"Loaded FAISS index and documents from {VECTOR_DIR}")
 
-    def search(self, query, k=3):
+    def search(self, query, k=5):
         """Search for top k relevant documents for the query."""
         query_vec = self.model.encode([query], convert_to_numpy=True)
         distances, indices = self.index.search(query_vec, k)

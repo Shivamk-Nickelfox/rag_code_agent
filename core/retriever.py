@@ -3,7 +3,7 @@
 from core.vector_store import load_vector_store, embed_query
 
 
-def get_relevant_chunks(query: str, k: int = 3):
+def get_relevant_chunks(query: str, k: int = 5):
     vector_db = load_vector_store()
     query_vector = embed_query(query)
 

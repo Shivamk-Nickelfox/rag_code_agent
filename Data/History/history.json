@@ -1,10 +1,8 @@
 {
     "repos": [
-        "https://github.com/Shivamk-Nickelfox/Dashboard-s.git",
-        "https://github.com/Shivamk-Nickelfox/smart-error-assistant.git"
+        "https://github.com/Shivamk-Nickelfox/Blog-Website.git"
     ],
     "prompts": [
-        "hi kese ho ",
-        "how we gonna use this file"
+        "tell me the styles used in this code "
     ]
 }
