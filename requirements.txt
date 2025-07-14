@@ -93,7 +93,7 @@ packaging==24.2
 pandas==2.3.0
 pillow==11.2.1
 posthog==4.2.0
-protobuf==5.29.5
+
 pyarrow==20.0.0
 pyasn1==0.6.1
 pyasn1_modules==0.4.2
@@ -156,3 +156,4 @@ websockets==15.0.1
 wrapt==1.17.2
 zipp==3.22.0
 zstandard==0.23.0
+protobuf==5.29.5
